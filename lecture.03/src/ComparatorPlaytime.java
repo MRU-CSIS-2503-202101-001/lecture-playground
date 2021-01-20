@@ -3,7 +3,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ComparatorPlaytime<T> {
+public class ComparatorPlaytime {
+
+  public static void main(String[] args) {
+    ComparatorPlaytime playtime = new ComparatorPlaytime();
+    playtime.run();
+  }
 
   public void run() {
 
@@ -28,7 +33,7 @@ public class ComparatorPlaytime<T> {
     // ...
     // What's this other Collections.sort here? And WTF is a Comparator?
     // ...
-    // Look it up!
+    // Let's look it up!
 
     // How do we make one?
     // If the class you want to futz with ain't yours, you'll likely go
@@ -51,6 +56,6 @@ public class ComparatorPlaytime<T> {
 
     System.out.println();
 
-    System.out.printf("%-50s: %s%n", "sorted unnaturally, with a vile Comparator:", babies);
+    // System.out.printf("%-50s: %s%n", "sorted unnaturally, with a vile Comparator:", babies);
   }
 }
