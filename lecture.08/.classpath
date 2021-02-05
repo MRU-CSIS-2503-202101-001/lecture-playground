@@ -12,9 +12,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="lib/assertj-core-3.18.1.jar"/>
-	<classpathentry kind="lib" path="lib/system-lambda-1.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/JColor-5.0.1.jar"/>
-	<classpathentry kind="lib" path="lib/piccolo2d-core-3.0.jar"/>
-	<classpathentry kind="lib" path="lib/piccolo2d-extras-3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
