@@ -1,5 +1,19 @@
 public class MyLinkedList<T> implements List<T> {
 
+  public static void main(String[] args) {
+    MyLinkedList<Integer> list = new MyLinkedList<>();
+
+    list.append(1);
+    list.append(5);
+    list.append(7);
+
+    list.add(1, 2);
+
+    list.add(0, 17);
+
+    System.out.println("success!");
+  }
+
   private Node<T> head;
   private int size;
 
@@ -18,18 +32,42 @@ public class MyLinkedList<T> implements List<T> {
 
   @Override
   public void append(T t) {
+
+    Node<T> newGuy = new Node<>(t);
+
+    if (isEmpty()) {
+      head = newGuy;
+    } else {
+      Node<T> currNode = nodeAt(size - 1);
+      currNode.next = newGuy;
+    }
+
     size++;
   }
 
   @Override
-  public void add(int i, T t) {
+  public void add(int index, T t) {
+    if (outOfBounds(index)) {
+      throw new IndexOutOfBoundsException();
+    } else if (index == 0) {
+      prepend(t);
+    } else {
+      Node<T> newGuy = new Node<>(t);
+      Node<T> currNode = nodeAt(index - 1);
+      newGuy.next = currNode.next;
+      currNode.next = newGuy;
+    }
     size++;
   }
 
   @Override
-  public T get(int i) {
-    // TODO Auto-generated method stub
-    return null;
+  public T get(int index) {
+    if (outOfBounds(index)) {
+      throw new IndexOutOfBoundsException();
+    } else {
+      Node<T> currNode = nodeAt(index);
+      return currNode.data;
+    }
   }
 
   @Override
@@ -53,6 +91,19 @@ public class MyLinkedList<T> implements List<T> {
     return head == null;
   }
 
+  private Node<T> nodeAt(int index) {
+    Node<T> currNode = head;
+
+    for (int i = 0; i < index; i++) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+
+  private boolean outOfBounds(int i) {
+    return i < 0 || i >= size;
+  }
+
   private static class Node<T> {
 
     private T data;
@@ -61,6 +112,11 @@ public class MyLinkedList<T> implements List<T> {
     public Node(T data) {
       this.data = data;
       this.next = null;
+    }
+
+    @Override
+    public String toString() {
+      return String.format("%s", data.toString());
     }
   }
 }
