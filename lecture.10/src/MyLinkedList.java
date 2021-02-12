@@ -3,13 +3,7 @@ public class MyLinkedList<T> implements List<T> {
   public static void main(String[] args) {
     MyLinkedList<Integer> list = new MyLinkedList<>();
 
-    list.add(0, 1);
-    list.append(5);
-    list.append(7);
 
-    list.add(0, 2);
-
-    list.add(0, 17);
 
     System.out.println("success!");
   }
