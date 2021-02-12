@@ -10,7 +10,7 @@ public interface List<T> {
 
   int indexOf(T target);
 
-  void remove(int i);
+  T remove(int i);
 
   int size();
 
