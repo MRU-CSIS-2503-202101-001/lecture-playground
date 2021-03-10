@@ -12,11 +12,23 @@ public class CountDown {
 
     System.out.println("\n##### RECURSIVE TIME ########\n");
 
+    launchRecursively(3);
+    System.out.println("=======");
+    launchRecursively(2);
+    System.out.println("=======");
     launchRecursively(1);
+    System.out.println("=======");
+    launchRecursively(0);
+    System.out.println("=======");
   }
 
   public static void launchRecursively(int countDownFrom) {
-    //
+    if (countDownFrom == 0) {
+      System.out.println("liftoff!");
+    } else {
+      System.out.println(countDownFrom);
+      launchRecursively(countDownFrom - 1);
+    }
   }
 
   public static void launchLoopy(int countDownFrom) {

@@ -7,22 +7,28 @@ public class CountUp {
     System.out.println("=======");
     printUpToLoopy(1, 1);
     System.out.println("=======");
-    printUpToLoopy(0, 1);
+    printUpToLoopy(1, 0);
     System.out.println("=======");
 
     System.out.println("\n##### RECURSIVE TIME ########\n");
 
     printUpToRecursively(1, 3);
+    printUpToRecursively(1, 0);
   }
 
-  public static void printUpToLoopy(int numStoStartAt, int numberToStopAt) {
-    for (int n = numStoStartAt; n <= numberToStopAt; n++) {
+  public static void printUpToLoopy(int numToStartAt, int numberToStopAt) {
+    for (int n = numToStartAt; n <= numberToStopAt; n++) {
       System.out.println(n);
     }
     System.out.println("WHOA, NELLY!");
   }
 
-  public static void printUpToRecursively(int currentNumber, int numberToStopAt) {
-    //
+  public static void printUpToRecursively(int numToStartAt, int numToStopAt) {
+    if (numToStartAt > numToStopAt) {
+      System.out.println("WHOA, NELLY!");
+    } else {
+      System.out.println(numToStartAt);
+      printUpToRecursively(numToStartAt + 1, numToStopAt);
+    }
   }
 }

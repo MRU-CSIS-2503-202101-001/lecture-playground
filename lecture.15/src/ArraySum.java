@@ -15,15 +15,23 @@ public class ArraySum {
 
   private static int sumLoopy(int[] someNums) {
     int sum = 0;
-
-    for (int i = 0; i < someNums.length; i++) {
+    int length = someNums.length;
+    for (int i = 0; i < length; i++) {
       sum += someNums[i];
     }
 
     return sum;
   }
 
-  private static int sumRecursively(int[] someNums) {
-    return -1; //
+  public static int sumRecursively(int[] someNums) {
+    return sumRecursively(someNums, someNums.length);
+  }
+
+  private static int sumRecursively(int[] someNums, int length) {
+    if (length == 0) {
+      return 0;
+    } else {
+      return someNums[length - 1] + sumRecursively(someNums, length - 1);
+    }
   }
 }
